@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>form</title>
+<script type="text/JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_validateForm() { //v4.0
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+        if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+      } else if (test!='R') { num = parseFloat(val);
+        if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+  } if (errors) alert('The following error(s) occurred:\n'+errors);
+  document.MM_returnValue = (errors == '');
+}
+//-->
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <label>昵称：
+  <input type="text" name="textfield" />
+  </label><br />
+  <label>密码：
+  <input type="text" name="textfield" />
+  </label><br />
+  <label>邮箱：
+  <input type="text" name="textfield" />
+  </label>
+  <label>
+  <select name="select">
+    <option value="qq">qq.com</option>
+    <option value="163">163.com</option>
+    <option value="gmail">gmail.com</option>
+  </select>
+  </label>
+  <br />
+  <label>
+  性别： 
+  <input type="radio" name="radiobutton1" value="男" checked/>
+  男</label>
+  <label>
+  <input type="radio" name="radiobutton1" value="女" />
+  女</label>
+  <br />
+  爱好：
+  <label>
+  <input type="checkbox" name="checkbox" value="1" />
+  旅游</label>
+  <label>
+  <input type="checkbox" name="checkbox" value="2" />
+  摄影</label>
+  <label>
+  <input type="checkbox" name="checkbox" value="3" />
+  运动</label>
+  <br />
+  个人简介：
+  
+  <br />
+  <label>
+  <textarea name="textarea"></textarea>
+  </label>
+  <br />
+  上传个人照片：<br />
+  <label>
+  <input type="submit" name="Submit" value="选择文件" />
+  </label>
+  没选择<br />
+  <hr />
+  
+  	<input name="Submit2" type="submit" onclick="MM_validateForm('0','','R','1','','R','2','','R');return document.MM_returnValue" value="注册" />
+  	<br />
+</form>
+</body>
+</html>

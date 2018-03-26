@@ -1,0 +1,28 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+h1{
+   text-align: center;
+}
+table{
+    text-align: center;
+    font-weight: bold;
+}
+
+.pic {
+    text-align: center;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+    background-image: url("bg.jpg")
+}
+h3{
+    background-color: #05b0ff;
+    color: white;
+    line-height: 30px;
+    padding-left:10px;
+}
